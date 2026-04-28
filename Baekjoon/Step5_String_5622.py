@@ -1,3 +1,5 @@
+# Solution 1
+
 n = input()
 c = 0
 
@@ -18,5 +20,40 @@ for i in range(len(n)):
         c += 9
     else:
         c += 10
+
+print(c)
+
+# Solution 2 | by using Dictionary
+
+dial = {
+    'ABC': 3, 'DEF': 4, 'GHI': 5,
+    'JKL': 6, 'MNO': 7,
+    'PQRS': 8, 'TUV': 9, 'WXYZ': 10
+}
+
+n = input()
+c = 0
+
+for ch in n:
+    for key in dial:
+        if ch in key:
+            c += dial[key]
+
+print(c)
+
+# Solution 3
+
+n = input()
+c = 0
+
+for ch in n:
+    if ch <= 'C': c += 3
+    elif ch <= 'F': c += 4
+    elif ch <= 'I': c += 5
+    elif ch <= 'L': c += 6
+    elif ch <= 'O': c += 7
+    elif ch <= 'S': c += 8
+    elif ch <= 'V': c += 9
+    else: c += 10
 
 print(c)
